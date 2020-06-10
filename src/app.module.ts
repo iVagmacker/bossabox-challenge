@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { ToolsModule } from './tools/tools.module';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { Tool } from './tools/tool.entity';
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -22,5 +24,7 @@ import { Tool } from './tools/tool.entity';
       entities: [Tool]
     }),
   ],
+  providers: [AppService],
+  controllers: [AppController],
 })
 export class AppModule { }
